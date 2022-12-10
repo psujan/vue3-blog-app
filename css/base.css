@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #100b0b;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #100b0b;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+
+/*----------Common Classes------*/
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.input {
+  border: 1px solid #eee;
+  padding: 10px 25px;
+  border-radius: 6px;
+  outline: none !important;
+  transition: 0.3s ease;
+}
+
+.input:focus-visible {
+  border: 1px solid #30f3a8;
+  padding: 10px 25px;
+  border-radius: 6px;
+}
+
+/*----------Common Classes------*/

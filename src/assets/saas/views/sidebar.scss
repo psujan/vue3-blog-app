@@ -1,0 +1,11 @@
+@import "../variables.scss";
+
+.sidebar{
+  width:17.5%;
+  padding:20px 12px !important;
+  background:$black-color-alt;
+  background-origin: padding-box;
+  position: relative;
+  height:100vh;
+}
+

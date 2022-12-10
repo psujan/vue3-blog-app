@@ -1,0 +1,20 @@
+@import "../variables.scss";
+
+.header {
+  border-bottom: 1px solid $gray-color-light;
+  background: #fff;
+}
+
+
+.header-nav-link {
+  padding: 20px;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  color: $gray-color-medium;
+  transition: 0.3s ease;
+}
+
+.header-nav-link:hover {
+  border-bottom: 1px solid $primary-color;
+  color: $primary-color;
+}

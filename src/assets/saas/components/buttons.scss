@@ -1,0 +1,36 @@
+@import "../variables.scss";
+
+.page-btn {
+  border-radius: 4px;
+  border: 1px solid $primary-color;
+  color: $white;
+  background: $primary-color;
+  text-align: center;
+  display: inline-block;
+  font-size: $font-size-body;
+  padding:10px 20px
+}
+
+.outline{
+  background:$white;
+  border:1px solid $primary-color;
+  color:$primary-color;
+}
+
+.outline-red{
+  background:$white;
+  border:1px solid red;
+  color:red;
+}
+
+.page-btn-round {
+  border-radius: 30px;
+}
+
+.page-btn-dark {
+  background: $black-color;
+}
+
+.page-btn-disabled {
+  cursor: not-allowed;
+}

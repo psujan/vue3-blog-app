@@ -1,0 +1,36 @@
+<template>
+  <div class="flx crud-action">
+    <a href="javascript:;" title="View" class="pl-4 pr-4 mb-3 ">
+      <i class="las la-eye"></i>
+    </a>
+    <a href="javascript:;" title="Edit">
+      <i class="las la-edit"></i>
+    </a>
+    <a href="javascript:;" title="Delete">
+      <i class="las la-trash"></i>
+    </a>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style lang="scss" scoped>
+ @import '../assets/saas/variables.scss';
+.crud-action {
+  a {
+    font-size: 15px;
+    font-weight: 900;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    padding:4px;
+    margin-right: 8px;
+    background: $primary-color;
+    // color:$gray-color-medium;
+    color:$white;
+  }
+}
+</style>
