@@ -5,7 +5,9 @@
         <div class="modal-wrap">
           <div class="modal-content" :class="[show ? 'is-active' : '']">
             <div class="modal-header">
-              <h4 class="modal-title"><span v-if="title">{{title}}</span></h4>
+              <h4 class="modal-title">
+                <span v-if="title">{{ title }}</span>
+              </h4>
               <span class="modal-close" @click="closeModal">
                 <i class="las la-times"></i>
               </span>
@@ -24,6 +26,7 @@
 defineProps<{
   title?: string;
   show: {
+    type: Boolean;
     required: false;
     default: false;
   };
@@ -34,9 +37,9 @@ const emit = defineEmits<{
   (e: "onClose"): void;
 }>();
 
-const closeModal = ()=>{
-  emit('onClose');
-}
+const closeModal = () => {
+  emit("onClose");
+};
 </script>
 
 <style src="@/assets/saas/components//modal.scss" lang="scss"></style>
