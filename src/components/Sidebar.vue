@@ -10,7 +10,7 @@
         <li>
           <router-link
             to="/dashboard"
-            class="clr-gray f-auto pl-5 pr-5 pt-8 pb-8 d-block"
+            class="clr-gray f-body pl-5 pr-5 pt-8 pb-8 d-block"
           >
             <i class="sidebar-icon las la-tachometer-alt mr-10"></i>
             <span>Dashboard</span>
