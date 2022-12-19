@@ -3,7 +3,12 @@
     <label :for="computedId" :class="labelClass"
       >{{ label }} <span class="form-required" v-if="isRequired">*</span></label
     >
-    <Field :name="name" v-slot="{ field, errors, meta }" :rules="rules">
+    <Field
+      :name="name"
+      v-slot="{ field, errors, meta }"
+      :rules="rules"
+      :value="computedValue"
+    >
       <select
         v-bind="field"
         :class="[inputClass, meta.touched && !meta.valid ? 'is-invalid' : '']"
@@ -42,8 +47,8 @@ interface Props {
   inputClass?: string;
   rules?: any;
   name: string;
-  vmodel: any;
-  options: SelectOptions[];
+  modelValue: any;
+  options: SelectOptions[] | [];
 }
 
 interface FieldMeta {
@@ -66,7 +71,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 //Emits
 const emit = defineEmits<{
-  (e: "update:vmodel", value: any): void;
+  (e: "update:modelValue", value: any): void;
 }>();
 
 //Computed Properties
@@ -74,12 +79,12 @@ const emit = defineEmits<{
 const computedValue = computed({
   // getter
   get() {
-    return props.vmodel;
+    return props.modelValue;
   },
   // setter
   set(newValue) {
     console.log(newValue);
-    emit("update:vmodel", newValue);
+    emit("update:modelValue", newValue);
   },
 });
 

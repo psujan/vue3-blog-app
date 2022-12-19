@@ -11,25 +11,39 @@
 
     <base-row class="shadow-normal p-8 round-10">
       <BaseTable :headers="['#Id', 'Name', 'Category', 'Status', 'Action']">
-        <BlogTable />
+        <BlogTable :rows="blogRows" />
       </BaseTable>
-      <base-modal :show.sync="show" title="Add Blog" @onClose="closeModal">
-        <blog-form></blog-form>
-      </base-modal>
+      <blog-form
+        :show.sync="show"
+        :category-options="categoryRows"
+        @on-close="show = false"
+        @on-success="getBlogs"
+      ></blog-form>
     </base-row>
   </dashboard-layout>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive, onMounted } from "vue";
+import useBlog from "@/composables/useBlog";
 import BlogForm from "./partials/BlogForm.vue";
 import BlogTable from "./partials/BlogTable.vue";
 import BaseTable from "../../../components/base/BaseTable.vue";
+import useCategory from "@/composables/useCategories";
 
+/** reactiuve & non reactive data*/
 let show = ref(false);
+const { blogRows, getBlogs } = useBlog();
+const { categoryRows, getCategories } = useCategory();
+/** computed properties */
+/** functions */
 const openModal = () => (show.value = true);
-
-const closeModal = () => (show.value = false);
+/** Watchers */
+/** lifecycle hooks */
+onMounted(() => {
+  getBlogs();
+  getCategories();
+});
 </script>
 
 <style lang="scss" scoped></style>

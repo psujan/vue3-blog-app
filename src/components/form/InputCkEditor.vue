@@ -5,29 +5,16 @@
     >
     <Field
       :name="name"
-      v-slot="{ field, meta }"
+      v-slot="{ field, errors, meta }"
       :rules="rules"
       :value="computedValue"
-      :validateOnInput="true"
     >
-      <div class="flx">
-        <template v-if="options.length">
-          <span class="form-check-wrap" v-for="(option, i) in options" :key="i">
-            <input
-              v-bind="field"
-              type="radio"
-              :value="option.value"
-              :name="name"
-              :class="[
-                inputClass,
-                meta.touched && !meta.valid ? 'is-invalid' : '',
-              ]"
-              v-model="computedValue"
-            />
-            <label for="">{{ option.name }}</label>
-          </span>
-        </template>
-      </div>
+      <ckeditor
+        v-bind="field"
+        :editor="editor"
+        v-model="computedValue"
+        :config="editorConfig"
+      ></ckeditor>
     </Field>
     <ErrorMessage :name="name" class="form-error-text" />
     <!--Slot For Custom Error Messages-->
@@ -37,21 +24,22 @@
 
 <script setup lang="ts">
 import { Field, ErrorMessage } from "vee-validate";
-import { computed } from "vue";
-interface RadioOptions {
-  name: string | number;
-  value: string | number;
-}
+import { computed, ref, reactive } from "vue";
+import CKEditor from "@ckeditor/ckeditor5-vue";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+
+const editor = ClassicEditor;
+const ckeditor = CKEditor.component;
 interface Props {
   label?: string;
   inputId?: string;
+  placeholder?: string;
   fieldClass?: string;
   labelClass?: string;
   inputClass?: string;
   rules?: any;
   name: string;
   modelValue: any;
-  options: RadioOptions[];
 }
 
 interface FieldMeta {
@@ -66,7 +54,7 @@ interface FieldMeta {
 const props = withDefaults(defineProps<Props>(), {
   labelClass: "form-label",
   fieldClass: "w-6 mb-18",
-  inputClass: "form-check",
+  inputClass: "form-input",
   rules: {
     required: false,
   },
@@ -77,8 +65,15 @@ const emit = defineEmits<{
   (e: "update:modelValue", value: any): void;
 }>();
 
+// data
+let editorConfig = reactive({
+  placeholder: props.placeholder
+    ? props.placeholder
+    : props.label
+    ? `Enter ${props.label}`
+    : "Enter Description",
+});
 //Computed Properties
-
 const computedValue = computed({
   // getter
   get() {
@@ -118,5 +113,17 @@ const isRequired = computed(() => {
 <style>
 .is-invalid {
   border: 1px solid rgb(255, 0, 0) !important;
+}
+</style>
+
+<style scoped>
+textarea {
+  font-family: inherit;
+}
+</style>
+
+<style>
+.ck-editor__editable {
+  min-height: 280px;
 }
 </style>
