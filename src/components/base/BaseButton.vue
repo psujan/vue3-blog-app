@@ -1,8 +1,12 @@
 <template>
-  <button @click="handleClick" :disabled="isDisabled" :class="buttonClassList">
+  <button
+    @click="handleClick"
+    :disabled="isDisabled"
+    :class="buttonClassList"
+  >
     <slot name="icon"></slot>
     {{ title }}
-    <slot/>
+    <slot v-if="!title" />
   </button>
 </template>
 
@@ -13,8 +17,9 @@ const DEFAULT_BUTTON_CLASS = "page-btn";
 
 const props = defineProps({
   title: {
-    required: true,
+    required: false,
     type: String,
+    default: "",
   },
   isDisabled: {
     required: false,
@@ -24,6 +29,10 @@ const props = defineProps({
   btnClass: {
     required: false,
     default: "",
+  },
+  type: {
+    required: false,
+    default: "button",
   },
 });
 
