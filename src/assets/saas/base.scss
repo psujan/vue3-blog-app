@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap');
 @import "./variables.scss";
 
-* , *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -14,7 +16,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: $black-color;
 }
 
@@ -26,11 +28,20 @@ ul {
   list-style: none;
 }
 
-a{
-  color:$black-color;
+a {
+  color: $black-color;
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
   cursor: pointer;
 }
 /*----------Common Classes------*/
