@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
-*, *::after, *::before {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap");
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -12,7 +14,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #100b0b;
 }
 
@@ -28,7 +30,16 @@ a {
   color: #100b0b;
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
   cursor: pointer;
 }
 
@@ -47,7 +58,7 @@ a {
 }
 
 .input:focus-visible {
-  border: 1px solid #30f3a8;
+  border: 1px solid #09bdf0;
   padding: 10px 25px;
   border-radius: 6px;
 }
