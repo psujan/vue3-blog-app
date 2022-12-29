@@ -1,6 +1,6 @@
 /*colors*/
 .clr-main {
-  color: #30f3a8;
+  color: #09bdf0;
 }
 
 .clr-gray {
@@ -17,7 +17,7 @@
 
 /*backgrounds*/
 .b-main {
-  background: #30f3a8;
+  background: #09bdf0;
 }
 
 .b-white {
@@ -1365,6 +1365,30 @@
 
 .d-inline-flex {
   display: inline-flex !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-initial {
+  text-align: initial !important;
+}
+
+.text-inherit {
+  text-align: inherit !important;
 }
 
 .w-1 {

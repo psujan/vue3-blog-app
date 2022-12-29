@@ -49,18 +49,4 @@ button:not(:disabled) {
   margin: 0 auto;
 }
 
-.input {
-  border: 1px solid #eee;
-  padding: 10px 25px;
-  border-radius: 6px;
-  outline: none !important;
-  transition: 0.3s ease;
-}
-
-.input:focus-visible {
-  border: 1px solid #09bdf0;
-  padding: 10px 25px;
-  border-radius: 6px;
-}
-
 /*----------Common Classes------*/

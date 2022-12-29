@@ -1,18 +1,28 @@
 .page-btn {
   border-radius: 4px;
-  border: 1px solid #30f3a8;
+  border: 1px solid transparent;
   color: #fff;
-  background: #30f3a8;
+  background: #09bdf0;
   text-align: center;
   display: inline-block;
   font-size: 15px;
   padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.page-btn:hover {
+  background: #15a8d1;
 }
 
 .outline {
   background: #fff;
-  border: 1px solid #30f3a8;
-  color: #30f3a8;
+  border: 1px solid #09bdf0;
+  color: #09bdf0;
+}
+
+.outline-hover:hover {
+  background-color: #09bdf0;
+  color: #fff;
 }
 
 .outline-red {
