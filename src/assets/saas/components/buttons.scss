@@ -39,3 +39,10 @@
   @include button();
   cursor: not-allowed;
 }
+
+.page-btn-tag{
+  @include button($gray-white-color ,30px);
+  color:$black-color;
+  padding:4px 6px;
+  font-size: 12px;
+}

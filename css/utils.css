@@ -1,3 +1,12 @@
+/* general hover effect*/
+.hover {
+  transition: background-color, color 0.3s ease;
+}
+.hover:hover {
+  background-color: #09bdf0;
+  color: #fff;
+}
+
 /*colors*/
 .clr-main {
   color: #09bdf0;
@@ -70,12 +79,20 @@
   border: 1px solid rgba(204, 204, 204, 0.4);
 }
 
-.bdr-b {
+.bdr-bottom {
   border-bottom: 1px solid rgba(204, 204, 204, 0.4);
 }
 
 .bdr-top {
   border-top: 1px solid rgba(204, 204, 204, 0.4);
+}
+
+.bdr-left {
+  border-left: 1px solid rgba(204, 204, 204, 0.4);
+}
+
+.bdr-right {
+  border-right: 1px solid rgba(204, 204, 204, 0.4);
 }
 
 /*flex utils*/
@@ -1318,6 +1335,10 @@
   width: 20% !important;
 }
 
+.w-25 {
+  width: 25% !important;
+}
+
 .w-30 {
   width: 30% !important;
 }
@@ -1336,6 +1357,10 @@
 
 .w-70 {
   width: 70% !important;
+}
+
+.w-75 {
+  width: 75% !important;
 }
 
 .w-80 {

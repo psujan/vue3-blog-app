@@ -1,0 +1,134 @@
+{
+  "posts": [
+    {
+      "title": "Fashion Trends",
+      "category": "Design",
+      "status": 0,
+      "content": "<p>Lorem Ipsum</p>",
+      "id": 2
+    },
+    {
+      "title": "New Blog",
+      "category": "Other",
+      "status": 0,
+      "content": "<p>Test</p>",
+      "id": 3
+    },
+    {
+      "title": "Hello",
+      "category": "Design",
+      "status": 1,
+      "content": "<p>test</p>",
+      "id": 4
+    },
+    {
+      "title": "Some Random title",
+      "category": "Design",
+      "status": 0,
+      "content": "<p>test</p>",
+      "id": 9
+    },
+    {
+      "title": "Nice Xa Ta",
+      "category": "Other",
+      "status": 1,
+      "content": "<p>dami</p>",
+      "id": 10
+    },
+    {
+      "title": "Sidebar height test",
+      "category": "Design",
+      "status": 1,
+      "content": "<p>test</p>",
+      "id": 11
+    },
+    {
+      "title": "test",
+      "category": "Design",
+      "status": 0,
+      "content": "<p>test</p>",
+      "id": 12
+    },
+    {
+      "title": "Hic itaque dolor con",
+      "category": "Design",
+      "status": 0,
+      "content": "<p>test</p>",
+      "id": 13
+    },
+    {
+      "title": "Corporis necessitati",
+      "category": "System & Engineering",
+      "status": 1,
+      "content": "<p>test</p>",
+      "id": 14
+    },
+    {
+      "title": "Tempor incidunt adi",
+      "category": "System & Engineering",
+      "status": 0,
+      "content": "<p>dami dami</p>",
+      "id": 15
+    },
+    {
+      "title": "Earum enim consequat",
+      "category": "Design",
+      "status": 0,
+      "content": "<p>awesome</p>",
+      "id": 17
+    },
+    {
+      "title": "Enim sunt excepteur ",
+      "category": "System & Engineering",
+      "status": 0,
+      "content": "<p>chgghgh</p>",
+      "id": 20
+    },
+    {
+      "title": "Laborum laborum sit ",
+      "category": "IT & Software",
+      "status": 1,
+      "content": "<p>test update</p>",
+      "id": 21
+    },
+    {
+      "title": "Cupidatat non pariat",
+      "category": "Other",
+      "status": 1,
+      "content": "<p>hgchjjh</p>",
+      "id": 22
+    },
+    {
+      "title": "Laborum Nemo repreh",
+      "category": "IT & Software",
+      "status": 1,
+      "content": "<p>khbkj</p>",
+      "id": 23
+    },
+    {
+      "title": "New Loading Spinner Test",
+      "category": "System & Engineering",
+      "status": 1,
+      "content": "<p>this is test content</p>",
+      "id": 25
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "IT & Software"
+    },
+    {
+      "id": 2,
+      "name": "Design"
+    },
+    {
+      "id": 3,
+      "name": "System & Engineering"
+    },
+    {
+      "id": 4,
+      "name": "Other"
+    }
+  ]
+}

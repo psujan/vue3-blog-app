@@ -73,3 +73,18 @@
   transition: background-color 0.3s ease;
   cursor: not-allowed;
 }
+
+.page-btn-tag {
+  border-radius: 30px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #efefef;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  color: #100b0b;
+  padding: 4px 6px;
+  font-size: 1;
+}
