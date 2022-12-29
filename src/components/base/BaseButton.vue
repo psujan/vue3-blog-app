@@ -61,6 +61,7 @@ const handleClick = (event: Event): void => {
 };
 </script>
 
-<style scoped lang="scss">
+<!-- blobally use button styles and class -->
+<style lang="scss">
 @import "@/assets/saas/components/buttons.scss";
 </style>
