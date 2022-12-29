@@ -7,7 +7,7 @@
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "api": "json-server -w src/json/db.json --port=3001"
+    "api": "json-server -w src/json/db.json --port=3001 --delay=500"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^35.4.0",
@@ -15,11 +15,11 @@
     "@vee-validate/i18n": "^4.7.1",
     "@vee-validate/rules": "^4.7.1",
     "axios": "^1.2.1",
-    "element-plus": "^2.2.17",
     "vee-validate": "^4.7.1",
     "vue": "^3.2.38",
     "vue-modal-dialogs": "^3.0.0",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.5",
+    "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "@types/node": "^16.11.56",
