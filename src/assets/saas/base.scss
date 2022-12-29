@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap");
 @import "./variables.scss";
 
 *,
@@ -49,19 +49,4 @@ button:not(:disabled) {
   max-width: 1140px;
   margin: 0 auto;
 }
-
-.input {
-  border: 1px solid #eee;
-  padding: 10px 25px;
-  border-radius: 6px;
-  outline: none !important;
-  transition: 0.3s ease;
-}
-
-.input:focus-visible {
-  border: 1px solid $primary-color;
-  padding: 10px 25px;
-  border-radius: 6px;
-}
-
 /*----------Common Classes------*/
