@@ -5,25 +5,56 @@
     <td>{{ row.category }}</td>
     <td>{{ row.status ? "Active" : "Inactive" }}</td>
     <td>
-      <CrudActions></CrudActions>
+      <CrudActions
+        @onEdit="handleOnEdit(row)"
+        @onDelete="confirmDelete(row.id as string)"
+      ></CrudActions>
     </td>
   </tr>
-  <template> </template>
+  <confirm-modal v-model:show="showConfirmModal" @onConfirm="handleDelete" />
 </template>
 
 <script setup lang="ts">
-import CrudActions from "../../../../components/CrudActions.vue";
-interface row {
-  id: "";
-  title: "";
-  status: "";
-  category: "";
-}
+import { ref } from "vue";
+import type { BlogObject } from "@/types";
+import CrudActions from "../../../../components/ui/CrudActions.vue";
 
 interface Props {
-  rows?: row[];
+  rows?: BlogObject[];
 }
 defineProps<Props>();
+
+/**
+ * Emitted events
+ */
+const emit = defineEmits<{
+  (e: "handleOnEdit", row: BlogObject): void;
+  (e: "handleOnDelete", id: string): void;
+}>();
+/**
+ * data
+ */
+const showConfirmModal = ref(false);
+const currentBlogId = ref("");
+/**
+ * functions
+ */
+const handleOnEdit = (row: BlogObject) => {
+  emit("handleOnEdit", row);
+};
+
+const confirmDelete = (id: string) => {
+  currentBlogId.value = id;
+  showConfirmModal.value = true;
+};
+
+const handleDelete = (canDelete: boolean) => {
+  if (!canDelete) {
+    currentBlogId.value = "";
+    return;
+  }
+  emit("handleOnDelete", currentBlogId.value);
+};
 </script>
 
 <style lang="scss" scoped></style>
