@@ -1,6 +1,6 @@
 <template>
   <div :class="fieldClass">
-    <label :for="computedId" :class="labelClass"
+    <label :for="computedId" :class="labelClass" v-if="label"
       >{{ label }} <span class="form-required" v-if="isRequired">*</span></label
     >
     <Field
