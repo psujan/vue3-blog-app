@@ -2,43 +2,74 @@
   border-radius: 4px;
   border: 1px solid transparent;
   color: #fff;
-  background: #09bdf0;
+  background-color: #09bdf0;
   text-align: center;
   display: inline-block;
   font-size: 15px;
   padding: 10px 20px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
-
 .page-btn:hover {
-  background: #15a8d1;
+  background-color: #15a8d1;
 }
 
-.outline {
-  background: #fff;
-  border: 1px solid #09bdf0;
-  color: #09bdf0;
-}
-
-.outline-hover:hover {
-  background-color: #09bdf0;
+.page-btn-no-hover {
+  border-radius: 4px;
+  border: 1px solid transparent;
   color: #fff;
-}
-
-.outline-red {
-  background: #fff;
-  border: 1px solid red;
-  color: red;
+  background-color: #09bdf0;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
 .page-btn-round {
   border-radius: 30px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #09bdf0;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
 .page-btn-dark {
-  background: #100b0b;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #100b0b;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.page-btn-dark-round {
+  border-radius: 30px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #100b0b;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
 .page-btn-disabled {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #09bdf0;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
   cursor: not-allowed;
 }
