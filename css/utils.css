@@ -57,6 +57,14 @@
   font-size: 22px;
 }
 
+.f-large-80 {
+  font-size: 28px;
+}
+
+.f-large-100 {
+  font-size: 36px;
+}
+
 /*borders*/
 .bdr {
   border: 1px solid rgba(204, 204, 204, 0.4);

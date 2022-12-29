@@ -10,8 +10,21 @@
   color: #877a7a;
   transition: 0.3s ease;
 }
-
 .header-nav-link:hover {
-  border-bottom: 1px solid #30f3a8;
-  color: #30f3a8;
+  border-bottom: 1px solid #09bdf0;
+  color: #09bdf0;
+}
+
+.search {
+  width: 30%;
+}
+
+.search-input input {
+  border-radius: 30px;
+  border: 1px solid #efefef;
+}
+.search-input input:focus {
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background: #fff;
 }

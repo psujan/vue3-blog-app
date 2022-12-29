@@ -1,45 +1,41 @@
 @import "../variables.scss";
 
-.page-btn {
-  border-radius: 4px;
+@mixin button($bg : $primary-color ,$borderRadius : 4px){
+  border-radius: $borderRadius;
   border: 1px solid transparent;
   color: $white;
-  background: $primary-color;
+  background-color: $bg;
   text-align: center;
   display: inline-block;
   font-size: $font-size-body;
   padding:10px 20px;
-  transition:0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.page-btn:hover{
-  background: $primary-hover-color;
+.page-btn {
+  @include button();
+  &:hover{
+    background-color: $primary-hover-color;
+  }
 }
 
-.outline{
-  background:$white;
-  border:1px solid $primary-color;
-  color:$primary-color;
-}
-.outline-hover:hover{
-  background-color: $primary-color;
-  color:$white;
-}
-
-.outline-red{
-  background:$white;
-  border:1px solid red;
-  color:red;
+.page-btn-no-hover{
+  @include button()
 }
 
 .page-btn-round {
-  border-radius: 30px;
+  @include button($primary-color , 30px);
 }
 
 .page-btn-dark {
-  background: $black-color;
+  @include button($black-color);
+}
+
+.page-btn-dark-round{
+  @include button($black-color , 30px);
 }
 
 .page-btn-disabled {
+  @include button();
   cursor: not-allowed;
 }

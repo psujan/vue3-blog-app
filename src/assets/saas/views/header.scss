@@ -5,16 +5,31 @@
   background: #fff;
 }
 
-
 .header-nav-link {
   padding: 20px;
   display: inline-block;
   border-bottom: 1px solid transparent;
   color: $gray-color-medium;
   transition: 0.3s ease;
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+    color: $primary-color;
+  }
 }
 
-.header-nav-link:hover {
-  border-bottom: 1px solid $primary-color;
-  color: $primary-color;
+.search {
+  width: 30%;
+}
+
+.search-input {
+  input {
+    border-radius: 30px;
+    border: 1px solid $gray-white-color;
+    ;
+    &:focus {
+      border: 1px solid transparent;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      background: #fff;
+    }
+  }
 }
