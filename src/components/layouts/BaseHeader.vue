@@ -1,41 +1,39 @@
 <template>
   <header class="header">
-    <div class="container flx flx-x-btwn flx-y-ctr">
+    <div class="container flx flx-x-btwn flx-y-ctr pt-10 pb-10">
       <BaseLogo />
-      <nav class="header-nav">
-        <ul class="flx">
-          <li class="header-nav-item">
-            <a href="#overview" class="header-nav-link">Overview</a>
-          </li>
-          <li class="header-nav-item">
-            <a href="#features" class="header-nav-link">Features</a>
-          </li>
-          <li class="header-nav-item">
-            <a href="javascript:;" class="header-nav-link">Pricing</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="search">
+        <form action="">
+          <input-text
+            field-class="search-input"
+            input-class="form-input"
+            placeholder="Search ..."
+            name="search"
+            v-model="search"
+          />
+        </form>
+      </div>
       <div>
-        <base-button
-          title="View On Github"
-          :btnClass="['page-btn', 'page-btn-dark', 'page-btn-round']"
-          @clicked="redirectToGithub"
-        >
-          <template #icon>
-            <span class="f-auto"><i class="lab la-github"></i></span>
-          </template>
-        </base-button>
+        <a href="https://github.com/psujan/vue3-blog-app" target="_blank">
+          <span class="f-large-80"><i class="lab la-github"></i></span>
+        </a>
       </div>
     </div>
   </header>
 </template>
 
 <script lang="ts" setup>
-import BaseLogo from '../base/BaseLogo.vue';
+import BaseLogo from "../base/BaseLogo.vue";
+import { ref } from "vue";
+/**
+ *
+ * data
+ */
+const search = ref("");
 //methods
 function redirectToGithub(e: Event): void {
   console.log("redirecting ...", e);
 }
 </script>
 
-<style scoped lang="scss" src="@/assets/saas/views/header.scss"></style>
+<style lang="scss" src="@/assets/saas/views/header.scss"></style>
