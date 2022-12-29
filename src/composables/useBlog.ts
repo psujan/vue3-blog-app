@@ -1,28 +1,71 @@
 import BlogService from "@/services/blog";
 import { ref } from "vue";
+import useSpinner from "./useSpinner";
+import type { BlogFormFields } from "@/types";
+const { isLoading } = useSpinner();
+
 export default function useBlog() {
   const blogRows = ref([]);
-  const blogErrorMessage = "Someting Went Wrong";
-
   const getBlogs = async () => {
-    const res = await BlogService.index();
-    blogRows.value = res.data;
+    isLoading(true);
+    try {
+      let res = await BlogService.index();
+      blogRows.value = res.data;
+    } finally {
+      isLoading(false);
+    }
   };
 
-  const createBlog = async (payload: any) => {
+  const createBlog = async (payload: BlogFormFields) => {
+    isLoading(true);
     try {
-      await BlogService.create({
+      return await BlogService.create<BlogFormFields>({
         ...payload,
         status: payload.status == "active" ? 1 : 0,
       });
-    } catch {
-      return blogErrorMessage;
+    } catch (error) {
+      console.error(error);
+      return null;
+    } finally {
+      isLoading(false);
+    }
+  };
+
+  const updateBlog = async (payload: BlogFormFields, id: string) => {
+    isLoading(true);
+    try {
+      return await BlogService.update<BlogFormFields>(
+        {
+          ...payload,
+          status: payload.status == "active" ? 1 : 0,
+        },
+        id
+      );
+    } catch (error) {
+      console.error(error);
+      return null;
+    } finally {
+      isLoading(false);
+    }
+  };
+
+  const deleteBlog = async (id: string) => {
+    isLoading(true);
+    try {
+      return await BlogService.delete(id);
+    } catch (error) {
+      console.error(error);
+      return null;
+    } finally {
+      isLoading(false);
     }
   };
 
   return {
     blogRows,
     createBlog,
+    updateBlog,
     getBlogs,
+    deleteBlog,
   };
 }
