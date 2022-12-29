@@ -5,18 +5,19 @@
     >
     <Field
       :name="name"
-      v-slot="{ field, meta }"
       :rules="rules"
+      v-model="computedValue"
+      :type="type"
+      v-slot="{ field, meta }"
     >
       <input
         v-bind="field"
-        :type="type"
         :class="[inputClass, meta.touched && !meta.valid ? 'is-invalid' : '']"
-        :placeholder="computedPlaceholder"
         :id="computedId"
-        v-model="computedValue"
+        :placeholder="computedPlaceholder"
       />
     </Field>
+
     <ErrorMessage :name="name" class="form-error-text" />
     <!--Slot For Custom Error Messages-->
     <slot name="error-message"></slot>
@@ -37,14 +38,6 @@ interface Props {
   rules?: any;
   name: string;
   modelValue: any;
-}
-
-interface FieldMeta {
-  dirty: boolean;
-  pending: boolean;
-  touched: boolean;
-  valid: boolean;
-  initialValue: any;
 }
 
 // Props
@@ -110,6 +103,10 @@ const isRequired = computed(() => {
   }
   return false;
 });
+
+// const getInputClass = (meta) => {
+//   return meta.touched && !meta.valid ? "is-invalid" : "";
+// };
 </script>
 
 <style>

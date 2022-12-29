@@ -5,9 +5,9 @@
     >
     <Field
       :name="name"
-      v-slot="{ field, errors, meta }"
+      v-slot="{ field, meta }"
       :rules="rules"
-      :value="computedValue"
+      v-model="computedValue"
     >
       <textarea
         v-bind="field"
@@ -37,15 +37,6 @@ interface Props {
   name: string;
   modelValue: any;
 }
-
-interface FieldMeta {
-  dirty: boolean;
-  pending: boolean;
-  touched: boolean;
-  valid: boolean;
-  initialValue: any;
-}
-
 // Props
 const props = withDefaults(defineProps<Props>(), {
   labelClass: "form-label",
@@ -107,14 +98,6 @@ const isRequired = computed(() => {
   }
   return false;
 });
-
-const getComputedInputClass = (meta: FieldMeta) => {
-  const { touched, valid } = { ...meta };
-  if (touched && !valid) {
-    return "form-input is-invalid";
-  }
-  return "form-input";
-};
 </script>
 
 <style>

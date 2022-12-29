@@ -41,15 +41,6 @@ interface Props {
   name: string;
   modelValue: any;
 }
-
-interface FieldMeta {
-  dirty: boolean;
-  pending: boolean;
-  touched: boolean;
-  valid: boolean;
-  initialValue: any;
-}
-
 // Props
 const props = withDefaults(defineProps<Props>(), {
   labelClass: "form-label",

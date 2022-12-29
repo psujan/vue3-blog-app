@@ -7,7 +7,7 @@
       :name="name"
       v-slot="{ field, meta }"
       :rules="rules"
-      :value="computedValue"
+      v-model="computedValue"
       :validateOnInput="true"
     >
       <div class="flx">
@@ -17,12 +17,12 @@
               v-bind="field"
               type="radio"
               :value="option.value"
+              v-model="computedValue"
               :name="name"
               :class="[
                 inputClass,
                 meta.touched && !meta.valid ? 'is-invalid' : '',
               ]"
-              v-model="computedValue"
             />
             <label for="">{{ option.name }}</label>
           </span>
@@ -52,14 +52,6 @@ interface Props {
   name: string;
   modelValue: any;
   options: RadioOptions[];
-}
-
-interface FieldMeta {
-  dirty: boolean;
-  pending: boolean;
-  touched: boolean;
-  valid: boolean;
-  initialValue: any;
 }
 
 // Props
