@@ -7,7 +7,7 @@
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "api": "json-server -w src/json/db.json --port=3001 --delay=500"
+    "api": "json-server -w json/db.json --port=3001 --delay=500"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^35.4.0",
