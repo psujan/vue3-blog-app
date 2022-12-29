@@ -1,7 +1,7 @@
 <template>
   <dashboard-layout>
     <base-row class="mb-30">
-      <h2 class="f-h2">Blog</h2>
+      <h1 class="f-h1">Blog</h1>
       <BaseButton title="Create" @onClick="openModal(null)">
         <template #icon>
           <i class="la la-plus"></i>
