@@ -2,7 +2,7 @@
   <Transition name="modal-fade">
     <div class="modal-dialog" v-show="show">
       <div class="modal-wrap">
-        <Transition name="modal-zoom">
+        <Transition :name="`modal-${animationName}`">
           <div
             class="modal-content"
             v-show="show"
@@ -31,16 +31,18 @@ interface Props {
   title?: string;
   show: boolean;
   showHeader?: boolean;
-  showCloseIcon?:boolean;
+  showCloseIcon?: boolean;
   dialogClass?: string;
   modalContainerClass?: string;
   width?: number;
+  animationName?: string;
 }
 withDefaults(defineProps<Props>(), {
   showHeader: true,
-  showCloseIcon:true,
+  showCloseIcon: true,
   width: 800,
   show: false,
+  animationName: "slideIn",
 });
 
 // Emits
@@ -54,38 +56,6 @@ const closeModal = () => {
 </script>
 
 <style lang="scss" scoped>
-.modal-fade-enter-from,
-.modal-fade-leave-to {
-  opacity: 0;
-}
-
-.modal-fade-enter-to,
-.modal-fade-leave-from {
-  opacity: 1;
-}
-
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-  transition: opacity 0.3s ease-in-out;
-}
-/**Zoom */
-.modal-zoom-enter-active {
-  animation: zoom 0.3s;
-}
-.modal-zoom-leave-active {
-  animation: zoom 0.3s reverse;
-}
-
-@keyframes zoom {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .modal-dialog {
   position: fixed;
   top: 0;
@@ -109,9 +79,9 @@ const closeModal = () => {
 }
 
 .modal-close {
-  position:absolute;
-  top:20px;
-  right:15px;
+  position: absolute;
+  top: 20px;
+  right: 15px;
   cursor: pointer;
   height: 2rem;
   width: 2rem;
@@ -161,6 +131,65 @@ const closeModal = () => {
   .modal-content {
     max-width: 450px;
   }
+}
+
+/**Modal Transitions */
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-fade-enter-to,
+.modal-fade-leave-from {
+  opacity: 1;
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/**Zoom */
+.modal-zoom-enter-active {
+  animation: zoom 0.3s ease-in-out;
+}
+.modal-zoom-leave-active {
+  animation: zoom 0.3s ease-in-out reverse;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/**Slide In */
+.modal-slideIn-enter-from{
+  transform: translateY(-100px);
+}
+
+.modal-slideIn-enter-to{
+  transform: translateY(0);
+}
+
+.modal-slideIn-enter-active{
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-slideIn-leave-from{
+  transform: translateY(0);
+}
+
+.modal-slideIn-leave-to{
+  transform: translateY(-100px);
+}
+
+.modal-slideIn-leave-active{
+  transition: transform 0.3s ease-in-out;
 }
 </style>
 
