@@ -2,6 +2,7 @@
   <base-modal
     v-model:show="show"
     :show-header="false"
+    :show-close-icon="false"
     :width="400"
   >
     <div class="text-center mb-20">

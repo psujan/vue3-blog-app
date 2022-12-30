@@ -39,8 +39,8 @@ import { showToast, useMessage } from "@/composables/useToast";
 import { SWR } from "@/common/constant";
 
 /** reactiuve & non reactive data*/
-let show = ref<boolean>(false);
-let row = ref<BlogRow>(null);
+const show = ref<boolean>(false);
+const row = ref<BlogRow>(null);
 const { blogRows, getBlogs, deleteBlog } = useBlog();
 const { categoryRows, getCategories } = useCategory();
 /** computed properties */
