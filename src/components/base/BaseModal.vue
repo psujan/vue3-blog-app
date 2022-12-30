@@ -90,9 +90,12 @@ const closeModal = () => {
   align-items: center;
   justify-content: center;
   padding: 6px;
-  background: #f1f4f3;
+  transition: background-color 0.3s ease;
   border-radius: 50%;
   justify-self: flex-end;
+  &:hover{
+    background-color: #f1f4f3;
+  }
 }
 
 .modal-container {
