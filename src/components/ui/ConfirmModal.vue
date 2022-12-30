@@ -3,6 +3,7 @@
     v-model:show="show"
     :show-header="false"
     :show-close-icon="false"
+    animation-name="zoom"
     :width="400"
   >
     <div class="text-center mb-20">
@@ -29,7 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
 //emits
 // Emits
 const emit = defineEmits<{
-  (e: "onConfirm", state:boolean): void;
+  (e: "onConfirm", state: boolean): void;
   (e: "update:show", state: boolean): void;
 }>();
 
