@@ -180,7 +180,6 @@ const setFormData = (data: BlogObject) => {
   form.category = category;
   form.status = status == 1 ? "active" : "inactive";
   form.content = content;
-  console.log("here setting form", form);
 };
 
 watch(
@@ -202,7 +201,6 @@ watch(
 watch(
   () => props.row,
   (newRow) => {
-    console.log("watching row", newRow);
     if (newRow && typeof newRow == "object") {
       setFormData(newRow as BlogObject);
     }
