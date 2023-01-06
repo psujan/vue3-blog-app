@@ -5,6 +5,7 @@
       <slot />
     </div>
   </div>
+  <slot name="modals"></slot>
 </template>
 
 <script setup lang="ts">
