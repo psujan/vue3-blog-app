@@ -4,7 +4,7 @@
 // import components
 import BaseButton from "@/components/base/BaseButton.vue";
 import BaseRow from "@/components/base/BaseRow.vue";
-import BaseModal from "@/components/base/BaseModal.vue"
+import BaseModal from "@/components/base/BaseModal.vue";
 import DashboardLayout from "@/components/layouts/DashboardLayout.vue";
 // import { Form, Field } from 'vee-validate';
 // register components
