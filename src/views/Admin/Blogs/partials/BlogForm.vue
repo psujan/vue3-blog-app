@@ -120,6 +120,8 @@ const formFields: BlogFormFields = {
   category: "",
   status: "",
   content: "",
+  created_at: "",
+  updated_at: "",
 };
 let form = reactive<BlogFormFields>({ ...formFields });
 const blogForm = ref(null);
@@ -139,9 +141,10 @@ const onSubmit = async () => {
     let res = null;
     if (props.row) {
       const blogId: string = (props.row ? props.row.id : "") as string;
-      res = await updateBlog({ ...form }, blogId);
+      res = await updateBlog({ ...form, updated_at: Date.now() }, blogId);
     } else {
-      res = await createBlog(form);
+      const dt = Date.now();
+      res = await createBlog({ ...form, created_at: dt, updated_at: dt });
     }
     if (res) {
       emit("onSuccess");
@@ -208,5 +211,4 @@ watch(
 );
 </script>
 
-<style>
-</style>
+<style></style>
