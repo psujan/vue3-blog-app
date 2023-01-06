@@ -10,7 +10,9 @@ const apiPath = {
 
 const BlogService = {
   async index() {
-    return await api.get(`${apiUrl}${apiPath.index}`);
+    return await api.get(
+      `${apiUrl}${apiPath.index}?_sort=updated_at&_order=desc`
+    );
   },
 
   async create<T>(payload: T) {
@@ -27,6 +29,14 @@ const BlogService = {
   async delete(id: string) {
     return await api.delete(`${apiUrl}${apiPath.delete.replace(":id", id)}`);
   },
+
+  // async getBlog(status = 'active'){
+  //   const res = this.index();
+  //   const rows = res.data ? res.data :[];
+  //   if(rows){
+  //     return rows.filter((item) = > item.status == 1);
+  //   }
+  // }
 };
 
 export default BlogService;
