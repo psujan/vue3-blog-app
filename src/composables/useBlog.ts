@@ -11,6 +11,9 @@ export default function useBlog() {
     try {
       let res = await BlogService.index();
       blogRows.value = res.data;
+    } catch (error) {
+      console.error(error);
+      blogRows.value = [];
     } finally {
       isLoading(false);
     }
