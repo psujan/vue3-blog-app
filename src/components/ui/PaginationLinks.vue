@@ -168,7 +168,7 @@ const isPageActive = (pageNumber: number) => {
     height: 34px;
     text-align: center;
     color: $black-color;
-    background-color:rgb(238, 237, 237);
+    background-color:#fff;
     padding: 4px;
     font-size: 12px;
     font-family: inherit;

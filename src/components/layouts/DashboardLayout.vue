@@ -18,5 +18,6 @@ import Sidebar from "../Sidebar.vue";
 .dashboard-container{
   width: 100%;
   padding:20px  !important;
+  background:$gray-white-color;
 }
 </style>

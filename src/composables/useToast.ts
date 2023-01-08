@@ -25,22 +25,27 @@ const showToast = (message: string, type: string) => {
     case "success":
       return toast(message, {
         type: TYPE.SUCCESS,
+        timeout: 2000,
       });
     case "error":
       return toast(message, {
         type: TYPE.ERROR,
+        timeout: 2000,
       });
     case "warning":
       return toast(message, {
         type: TYPE.WARNING,
+        timeout: 2000,
       });
     case "info":
       return toast(message, {
         type: TYPE.INFO,
+        timeout: 2000,
       });
     default:
       return toast(message, {
         type: TYPE.DEFAULT,
+        timeout: 2000,
       });
   }
 };

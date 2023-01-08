@@ -9,7 +9,7 @@
       </BaseButton>
     </base-row>
 
-    <div class="shadow-normal p-8 round-10">
+    <div class=" p-8 round-10 b-white">
       <BaseTable :headers="['#Id', 'Name', 'Category', 'Status', 'Action']">
         <BlogTable
           :rows="rows[currentPage - 1]"

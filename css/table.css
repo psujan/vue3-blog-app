@@ -6,9 +6,6 @@
   width: 100%;
   border-collapse: collapse;
 }
-.base-table thead {
-  background: #efefef;
-}
 .base-table thead th {
   text-align: left;
   padding: 14px 8px;

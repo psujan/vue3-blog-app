@@ -37,9 +37,12 @@ declare module '@vue/runtime-core' {
     InputText: typeof import('./src/components/form/InputText.vue')['default']
     InputTextArea: typeof import('./src/components/form/InputTextArea.vue')['default']
     PageRow: typeof import('./src/components/base/PageRow.vue')['default']
+    Pagination: typeof import('./src/components/ui/Pagination.vue')['default']
+    PaginationLinks: typeof import('./src/components/ui/PaginationLinks.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sidebar: typeof import('./src/components/Sidebar.vue')['default']
+    SimplePagination: typeof import('./src/components/ui/SimplePagination.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }

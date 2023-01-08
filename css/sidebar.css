@@ -1,8 +1,8 @@
 .sidebar {
   width: 17.5%;
   padding: 20px 12px !important;
-  background: rgba(15, 18, 18, 0.8);
+  background: #fff;
   background-origin: padding-box;
   position: relative;
-  min-height: 100v;
+  min-height: 100vh;
 }

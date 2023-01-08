@@ -2,9 +2,10 @@
   <div class="sidebar">
     <div class="sidebar-head">
       <div class="sidebar-head-title">
-        <BaseLogo color="#fff" class="mb-20 pt-6 pb-6"/>
+        <BaseLogo color="#100b0b" class="mb-30 pt-6 pb-6" />
       </div>
     </div>
+    <!-- <base-button class="w-100 mb-20">Add Blog</base-button> -->
     <div class="sidebar-main">
       <ul>
         <li>
@@ -40,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseLogo from "./base/BaseLogo.vue"
+import BaseLogo from "./base/BaseLogo.vue";
 </script>
 
 <style scoped lang="scss" src="@/assets/saas/views/sidebar.scss"></style>
@@ -55,14 +56,17 @@ import BaseLogo from "./base/BaseLogo.vue"
   text-align: center;
 }
 
-.sidebar-main a {
-  font-weight: 500;
-  border-radius: 10px;
-  color:$gray-white-color-80;
-  transition:all 0.4s ease;
-}
-
-.sidebar-main a:hover {
-  color: $white;
+.sidebar-main {
+  a {
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 4px 0;
+    color: rgb(73, 70, 70);
+    transition: 0.4s ease;
+    &:hover{
+      color: $primary-color;
+    }
+  }
 }
 </style>
