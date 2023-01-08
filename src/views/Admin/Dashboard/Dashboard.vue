@@ -4,11 +4,11 @@
       <h1 class="f-h2">Overview</h1>
     </base-row>
     <base-row class="mb-30">
-      <div class="w-8  p-12">
-      </div>
-      <div class="w-4 p-12 b-white">
-        
-      </div>
+      <dashboard-charts />
     </base-row>
   </dashboard-layout>
 </template>
+
+<script setup lang="ts">
+import DashboardCharts from "./partials/DashboardCharts.vue";
+</script>
