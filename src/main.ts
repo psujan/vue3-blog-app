@@ -11,6 +11,7 @@ import { registerComponents } from "./utils/global-components";
 import LoadingSpinner from "./plugins/spinner";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
+import VueApexCharts from "vue3-apexcharts";
 
 //Use Utils
 import "./utils/validator.ts";
@@ -22,6 +23,7 @@ const app = createApp(App);
 registerComponents(app);
 app.use(LoadingSpinner);
 app.use(Toast);
+app.use(VueApexCharts);
 app.use(router);
 
 app.mount("#app");
