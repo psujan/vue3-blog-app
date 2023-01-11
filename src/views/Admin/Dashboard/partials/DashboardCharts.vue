@@ -1,7 +1,7 @@
 <template>
   <div class="w-8 p-12">
     <h5>By Category</h5>
-    <apexchart type="bar" :options="chartOptions" :series="series" />
+    <apexchart type="bar" :options="chartOptions" :series="computedSeries" />
   </div>
   <div class="w-4 p-12 b-white flx-y-self-start round-10">
     <h5>By Status</h5>
@@ -10,62 +10,78 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
-const chartOptions = reactive({
-  chart: {
-    type: "bar",
-    height: 430,
-  },
-  colors: ["#09bdf0", "#ff4a4a"],
-  plotOptions: {
-    bar: {
-      horizontal: true,
-      dataLabels: {
-        position: "top",
+import { reactive, computed } from "vue";
+interface Props {
+  statusSeries: [number, number];
+  categories: string[];
+  activeArray: number[];
+  inactiveArray: number[];
+}
+
+// Props
+const props = withDefaults(defineProps<Props>(), {});
+
+// chart options for bar chart
+const chartOptions = computed(() => {
+  return {
+    chart: {
+      type: "bar",
+      height: 430,
+    },
+    colors: ["#09bdf0", "#ff4a4a"],
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        dataLabels: {
+          position: "top",
+        },
       },
     },
-  },
-  dataLabels: {
-    enabled: true,
-    offsetX: -6,
-    style: {
-      fontSize: "12px",
+    dataLabels: {
+      enabled: true,
+      offsetX: -6,
+      style: {
+        fontSize: "12px",
+        colors: ["#fff"],
+      },
+    },
+    stroke: {
+      show: true,
+      width: 1,
       colors: ["#fff"],
     },
-  },
-  stroke: {
-    show: true,
-    width: 1,
-    colors: ["#fff"],
-  },
-  tooltip: {
-    shared: true,
-    intersect: false,
-  },
-  xaxis: {
-    categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
-  },
-  states: {
-    hover: {
-      filter: {
-        type: "none",
+    tooltip: {
+      shared: true,
+      intersect: false,
+    },
+    xaxis: {
+      categories: props.categories,
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
       },
     },
-  },
+  };
 });
 
-const series = reactive([
-  {
-    name: "Active",
-    data: [44, 55, 41, 64, 22, 43, 21],
-  },
-  {
-    name: "Inactive",
-    data: [53, 32, 33, 52, 13, 44, 32],
-  },
-]);
+//chart series for bar chart
+const computedSeries = computed(() => {
+  return [
+    {
+      name: "Active",
+      data: props.activeArray,
+    },
+    {
+      name: "Inactive",
+      data: props.inactiveArray,
+    },
+  ];
+});
 
-const statusSeries = reactive([18, 12]);
+// chart options for donut chart
 const statusOptions = reactive({
   chart: {
     type: "donut",
@@ -88,5 +104,12 @@ const statusOptions = reactive({
       },
     },
   ],
+  states: {
+    hover: {
+      filter: {
+        type: "none",
+      },
+    },
+  },
 });
 </script>

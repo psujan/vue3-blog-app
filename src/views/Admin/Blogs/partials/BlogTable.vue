@@ -3,6 +3,7 @@
     <td>{{ row.id }}</td>
     <td>{{ row.title }}</td>
     <td>{{ row.category }}</td>
+    <td>{{ row.reading_time }}</td>
     <td>{{ row.status ? "Active" : "Inactive" }}</td>
     <td>
       <CrudActions

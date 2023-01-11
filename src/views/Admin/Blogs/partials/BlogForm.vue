@@ -47,6 +47,15 @@
         />
       </base-row>
       <base-row>
+        <input-text
+          label="Reading Time (In min)"
+          name="reading time"
+          :rules="{ required: true, numeric: true }"
+          fieldClass="w-12 mb-18"
+          v-model="form.reading_time"
+        />
+      </base-row>
+      <base-row>
         <input-ck-editor
           label="Content"
           name="content"
@@ -120,6 +129,7 @@ const formFields: BlogFormFields = {
   category: "",
   status: "",
   content: "",
+  reading_time: "",
   created_at: "",
   updated_at: "",
 };
@@ -170,6 +180,7 @@ const closeModal = async () => {
       status: "",
       category: "",
       content: "",
+      reading_time: "",
     },
   });
   resetField();
@@ -178,10 +189,11 @@ const closeModal = async () => {
 };
 
 const setFormData = (data: BlogObject) => {
-  const { title, category, status, content } = data;
+  const { title, category, status, reading_time, content } = data;
   form.title = title;
   form.category = category;
   form.status = status == 1 ? "active" : "inactive";
+  form.reading_time = reading_time;
   form.content = content;
 };
 

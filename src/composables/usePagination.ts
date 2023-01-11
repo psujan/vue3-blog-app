@@ -1,7 +1,7 @@
 import {getChunkedArray} from "@/common/helper";
 
 export default function usePagination() {
-  const chunkItems = (items:[] , pageSize = 3)=>{
+  const chunkItems = (items:[] , pageSize = 100)=>{
     return getChunkedArray(items , pageSize);
   }
 

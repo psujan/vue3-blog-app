@@ -9,8 +9,17 @@
       </BaseButton>
     </base-row>
 
-    <div class=" p-8 round-10 b-white">
-      <BaseTable :headers="['#Id', 'Name', 'Category', 'Status', 'Action']">
+    <div class="p-8 round-10 b-white">
+      <BaseTable
+        :headers="[
+          '#Id',
+          'Name',
+          'Category',
+          'Reading Time',
+          'Status',
+          'Action',
+        ]"
+      >
         <BlogTable
           :rows="rows[currentPage - 1]"
           @handle-on-edit="openModal"

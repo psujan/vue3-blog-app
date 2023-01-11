@@ -5,114 +5,26 @@
       "category": "System & Engineering",
       "status": 0,
       "content": "<p>dami xa ta</p>",
+      "reading_time": 2,
       "created_at": "",
-      "updated_at": 1672662421146,
+      "updated_at": 1673448893743,
       "id": 10
     },
     {
-      "title": "Esse nisi et itaque",
-      "category": "System & Engineering",
-      "status": 0,
-      "content": "<p>ghc,j</p>",
-      "created_at": 1672662452191,
-      "updated_at": 1672662452191,
-      "id": 14
-    },
-    {
-      "title": "Quis omnis reprehend",
-      "category": "Design",
-      "status": 1,
-      "content": "<p>test</p>",
-      "created_at": 1672662468382,
-      "updated_at": 1672662468382,
-      "id": 15
-    },
-    {
-      "title": "Veniam eos nisi quo",
-      "category": "Design",
-      "status": 0,
-      "content": "<p>asdfasdf</p>",
-      "created_at": 1672662688558,
-      "updated_at": 1672662688558,
-      "id": 16
-    },
-    {
-      "title": "Cillum aliquam esse ",
-      "category": "Design",
-      "status": 0,
-      "content": "<p>adsfasdf</p>",
-      "created_at": 1672662697381,
-      "updated_at": 1672662697381,
-      "id": 17
-    },
-    {
-      "title": "Omnis et Nam recusan",
-      "category": "Other",
-      "status": 0,
-      "content": "<p>adsfasdf</p>",
-      "created_at": 1672662706868,
-      "updated_at": 1672662706868,
-      "id": 18
-    },
-    {
-      "title": "Sed accusantium moll",
-      "category": "IT & Software",
-      "status": 0,
-      "content": "<p>asdfasdf</p>",
-      "created_at": 1672662716293,
-      "updated_at": 1672662716293,
-      "id": 19
-    },
-    {
-      "title": "Voluptatem reiciend",
+      "title": "Reading Blog Test",
       "category": "System & Engineering",
       "status": 1,
-      "content": "<p>adfasdf</p>",
-      "created_at": 1672662725549,
-      "updated_at": 1672662725549,
-      "id": 20
-    },
-    {
-      "title": "Ut iusto dolor volup",
-      "category": "System & Engineering",
-      "status": 0,
-      "content": "<p>asdfasdf</p>",
-      "created_at": "",
-      "updated_at": 1672662772061,
-      "id": 21
-    },
-    {
-      "title": "Quia nostrud cum har",
-      "category": "Other",
-      "status": 1,
-      "content": "<p>test</p>",
-      "created_at": "",
-      "updated_at": 1672974594650,
-      "id": 22
-    },
-    {
-      "title": "In sit fuga Saepe a",
-      "category": "IT & Software",
-      "status": 1,
-      "content": "<p>random</p>",
-      "created_at": 1672974615364,
-      "updated_at": 1672974615364,
-      "id": 23
-    },
-    {
-      "title": "Duis nisi ipsam lore",
-      "category": "System & Engineering",
-      "status": 0,
-      "content": "<p>dami xa</p>",
-      "created_at": 1672974631980,
-      "updated_at": 1672974631980,
-      "id": 24
+      "content": "<p>some 5 min content is here</p>",
+      "reading_time": "5",
+      "created_at": 1673448967896,
+      "updated_at": 1673448967896,
+      "id": 11
     }
   ],
   "categories": [
     {
-      "id": 1,
-      "name": "IT & Software"
+      "name": "IT & Software ",
+      "id": 1
     },
     {
       "id": 2,
@@ -125,6 +37,26 @@
     {
       "id": 4,
       "name": "Other"
+    },
+    {
+      "name": "test category",
+      "id": 5
+    },
+    {
+      "name": "test category",
+      "id": 6
+    },
+    {
+      "name": "another test",
+      "id": 7
+    },
+    {
+      "name": "another test",
+      "id": 8
+    },
+    {
+      "name": "simple test",
+      "id": 9
     }
   ]
 }

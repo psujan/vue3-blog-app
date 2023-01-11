@@ -16,6 +16,7 @@
     "@vee-validate/rules": "^4.7.1",
     "apexcharts": "^3.36.3",
     "axios": "^1.2.1",
+    "pinia": "^2.0.28",
     "vee-validate": "^4.7.1",
     "vue": "^3.2.38",
     "vue-modal-dialogs": "^3.0.0",
