@@ -11,12 +11,12 @@
           label="Name"
           name="name"
           :rules="{ required: true }"
-          fieldClass="w-12 mb-18"
+          fieldClass="col-12 mb-18"
           v-model="form.name"
         />
       </base-row>
       <base-row>
-        <div class="w-12">
+        <div class="col-12">
           <div class="flx flx-end mt-15">
             <base-button class="mr-9"
               >{{

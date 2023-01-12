@@ -1,11 +1,20 @@
 <template>
-  <div class="w-8 p-12">
-    <h5>By Category</h5>
-    <apexchart type="bar" :options="chartOptions" :series="computedSeries" />
+  <div class="col-8">
+    <div class="p-12 b-white round-10">
+      <h5>By Category</h5>
+      <apexchart
+        type="bar"
+        :height="445"
+        :options="chartOptions"
+        :series="computedSeries"
+      />
+    </div>
   </div>
-  <div class="w-4 p-12 b-white flx-y-self-start round-10">
-    <h5>By Status</h5>
-    <apexchart type="donut" :options="statusOptions" :series="statusSeries" />
+  <div class="col-4 flx-y-self-start">
+    <div class="p-12 b-white round-10">
+      <h5>By Status</h5>
+      <apexchart type="donut" :options="statusOptions" :series="statusSeries" />
+    </div>
   </div>
 </template>
 
@@ -27,6 +36,9 @@ const chartOptions = computed(() => {
     chart: {
       type: "bar",
       height: 430,
+      toolbar:{
+        show:false
+      }
     },
     colors: ["#09bdf0", "#ff4a4a"],
     plotOptions: {

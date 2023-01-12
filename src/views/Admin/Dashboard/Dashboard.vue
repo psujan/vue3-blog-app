@@ -1,16 +1,20 @@
 <template>
   <dashboard-layout>
-    <base-row class="mb-30">
-      <h1 class="f-h2">Overview</h1>
-    </base-row>
-    <base-row class="mb-30">
-      <dashboard-charts
-        :status-series="blogStatusSeries"
-        :categories="categories"
-        :active-array="activeCounts"
-        :inactive-array="inactiveCounts"
-      />
-    </base-row>
+    <div class="container">
+      <base-row class="mb-18">
+        <div class="col-12">
+          <h1 class="f-h2">Overview</h1>
+        </div>
+      </base-row>
+      <base-row class="mb-30 flx-x-btwn">
+        <dashboard-charts
+          :status-series="blogStatusSeries"
+          :categories="categories"
+          :active-array="activeCounts"
+          :inactive-array="inactiveCounts"
+        />
+      </base-row>
+    </div>
   </dashboard-layout>
 </template>
 

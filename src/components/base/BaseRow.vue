@@ -1,5 +1,5 @@
 <template>
-  <div class="row flx flx-x-btwn">
+  <div class="row">
     <slot />
   </div>
 </template>

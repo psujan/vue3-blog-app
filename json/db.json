@@ -37,26 +37,6 @@
     {
       "id": 4,
       "name": "Other"
-    },
-    {
-      "name": "test category",
-      "id": 5
-    },
-    {
-      "name": "test category",
-      "id": 6
-    },
-    {
-      "name": "another test",
-      "id": 7
-    },
-    {
-      "name": "another test",
-      "id": 8
-    },
-    {
-      "name": "simple test",
-      "id": 9
     }
   ]
 }
