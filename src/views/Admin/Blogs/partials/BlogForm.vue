@@ -4,88 +4,92 @@
     @on-close="closeModal"
     v-model:show="show"
   >
-    <Form @submit="onSubmit" ref="blogForm" :key="formRenderKey">
-      <base-row>
-        <input-text
-          label="Title"
-          name="title"
-          :rules="{ required: true }"
-          fieldClass="w-12 mb-18"
-          v-model="form.title"
-        />
-      </base-row>
-      <base-row>
-        <input-select
-          label="Category"
-          name="category"
-          :rules="{ required: true }"
-          fieldClass="w-12 mb-18"
-          v-model="form.category"
-          :options="
-            categoryOptions.length
-              ? categoryOptions.map(({ name }) => {
-                  return {
-                    value: name,
-                    name: name,
-                  };
-                })
-              : []
-          "
-        />
-      </base-row>
-      <base-row>
-        <input-radio
-          label="Status"
-          name="status"
-          :rules="{ required: true }"
-          fieldClass="w-12 mb-18"
-          v-model="form.status"
-          :options="[
-            { name: 'Active', value: 'active' },
-            { name: 'Inactive', value: 'inactive' },
-          ]"
-        />
-      </base-row>
-      <base-row>
-        <input-text
-          label="Reading Time (In min)"
-          name="reading time"
-          :rules="{ required: true, numeric: true }"
-          fieldClass="w-12 mb-18"
-          v-model="form.reading_time"
-        />
-      </base-row>
-      <base-row>
-        <input-ck-editor
-          label="Content"
-          name="content"
-          :rules="{ required: true }"
-          fieldClass="w-12 mb-18"
-          v-model="form.content"
-        />
-      </base-row>
-      <base-row>
-        <div class="w-12">
-          <div class="flx flx-end mt-15">
-            <base-button class="mr-9"
-              >{{
-                row
-                  ? isSubmitting
-                    ? "Updating"
-                    : "Update"
-                  : isSubmitting
-                  ? "Adding"
-                  : "Add"
-              }}
-              Blog {{ isSubmitting ? "..." : "" }}</base-button
-            >
-            <base-button class="outline outline-hover" @click.stop="closeModal"
-              >Close</base-button
-            >
+    <div class="p-20">
+      <Form @submit="onSubmit" ref="blogForm" :key="formRenderKey">
+        <base-row>
+          <input-text
+            label="Title"
+            name="title"
+            :rules="{ required: true }"
+            fieldClass="col-12 mb-18"
+            v-model="form.title"
+          />
+        </base-row>
+        <base-row>
+          <input-select
+            label="Category"
+            name="category"
+            :rules="{ required: true }"
+            fieldClass="col-12 mb-18"
+            v-model="form.category"
+            :options="
+              categoryOptions.length
+                ? categoryOptions.map(({ name }) => {
+                    return {
+                      value: name,
+                      name: name,
+                    };
+                  })
+                : []
+            "
+          />
+        </base-row>
+        <base-row>
+          <input-radio
+            label="Status"
+            name="status"
+            :rules="{ required: true }"
+            fieldClass="col-12 mb-18"
+            v-model="form.status"
+            :options="[
+              { name: 'Active', value: 'active' },
+              { name: 'Inactive', value: 'inactive' },
+            ]"
+          />
+        </base-row>
+        <base-row>
+          <input-text
+            label="Reading Time (In min)"
+            name="reading time"
+            :rules="{ required: true, numeric: true }"
+            fieldClass="col-12 mb-18"
+            v-model="form.reading_time"
+          />
+        </base-row>
+        <base-row>
+          <input-ck-editor
+            label="Content"
+            name="content"
+            :rules="{ required: true }"
+            fieldClass="col-12 mb-18"
+            v-model="form.content"
+          />
+        </base-row>
+        <base-row>
+          <div class="col-12">
+            <div class="flx flx-end mt-15">
+              <base-button class="mr-9"
+                >{{
+                  row
+                    ? isSubmitting
+                      ? "Updating"
+                      : "Update"
+                    : isSubmitting
+                    ? "Adding"
+                    : "Add"
+                }}
+                Blog {{ isSubmitting ? "..." : "" }}</base-button
+              >
+              <base-button
+                class="outline outline-hover"
+                @click.stop="closeModal"
+                >Close</base-button
+              >
+            </div>
           </div>
-        </div>
-      </base-row>
-    </Form>
+        </base-row>
+      </Form>
+    </div>
   </base-modal>
 </template>
 
