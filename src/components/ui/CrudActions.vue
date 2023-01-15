@@ -19,9 +19,9 @@
 
 <script setup lang="ts">
 interface Props {
-  show: boolean;
-  edit: boolean;
-  delete: boolean;
+  show?: boolean;
+  edit?: boolean;
+  delete?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -45,9 +45,13 @@ const props = withDefaults(defineProps<Props>(), {
     transition: 0.3s ease;
     padding: 4px;
     margin-right: 8px;
-    background: $primary-color;
+    background-color: $primary-color;
     // color:$gray-color-medium;
     color: $white;
+    transition: background-color 0.3s ease;
+    &:hover{
+      background-color:$primary-hover-color;
+    }
   }
 }
 </style>
