@@ -12,6 +12,8 @@ import LoadingSpinner from "./plugins/spinner";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import VueApexCharts from "vue3-apexcharts";
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import { createPinia } from 'pinia'
 
 
@@ -24,6 +26,7 @@ import router from "./router";
 const app = createApp(App);
 const pinia = createPinia();
 registerComponents(app);
+app.component('QuillEditor', QuillEditor)
 app.use(LoadingSpinner);
 app.use(Toast);
 app.use(VueApexCharts);
