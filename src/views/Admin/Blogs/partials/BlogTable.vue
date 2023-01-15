@@ -5,7 +5,7 @@
     <td>{{ row.category }}</td>
     <td>{{ row.reading_time }}</td>
     <td>{{ row.status ? "Active" : "Inactive" }}</td>
-    <td>
+    <td v-if="showActions">
       <CrudActions
         @onEdit="handleOnEdit(row)"
         @onDelete="confirmDelete(row.id as string)"
@@ -22,8 +22,11 @@ import CrudActions from "../../../../components/ui/CrudActions.vue";
 
 interface Props {
   rows?: BlogObject[];
+  showActions?: boolean;
 }
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  showActions: true,
+});
 
 /**
  * Emitted events

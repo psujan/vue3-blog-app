@@ -2,7 +2,7 @@
   <base-modal
     :title="`${row ? 'Edit' : 'Add'} Blog`"
     @on-close="closeModal"
-    v-model:show="show"
+    :show="show"
   >
     <div class="p-20">
       <Form @submit="onSubmit" ref="blogForm" :key="formRenderKey">
@@ -57,15 +57,15 @@
           />
         </base-row>
         <base-row>
-          <input-ck-editor
+          <input-quill-editor
+            fieldClass="col-12 mb-18"
+            v-model="form.content"
             label="Content"
             name="content"
             :rules="{ required: true }"
-            fieldClass="col-12 mb-18"
-            v-model="form.content"
           />
         </base-row>
-        <base-row>
+        <base-row class="submit-row">
           <div class="col-12">
             <div class="flx flx-end mt-15">
               <base-button class="mr-9"
@@ -94,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import InputCkEditor from "../../../../components/form/InputCkEditor.vue";
+import InputQuillEditor from '../../../../components/form/InputQuillEditor.vue'
 import { reactive, ref, watch } from "vue";
 import { Form } from "vee-validate";
 import InputText from "../../../../components/form/InputText.vue";
@@ -227,4 +227,8 @@ watch(
 );
 </script>
 
-<style></style>
+<style scoped>
+.submit-row{
+  margin-top:7rem;
+}
+</style>
