@@ -14,14 +14,26 @@
           :inactive-array="inactiveCounts"
         />
       </base-row>
+      <base-row class="mb-30">
+        <div class="col-12">
+          <h1 class="f-h2 mb-18">Recent Blogs</h1>
+        </div>
+        <div class="col-12">
+          <div class="p-12 b-white round-10">
+            <recent-blogs :rows="computedRecentBlogs" />
+          </div>
+        </div>
+      </base-row>
     </div>
   </dashboard-layout>
 </template>
 
 <script setup lang="ts">
+import RecentBlogs from "./partials/RecentBlogs.vue";
 import { computed, onMounted } from "vue";
 import DashboardCharts from "./partials/DashboardCharts.vue";
 import { useBlogStore } from "@/store/blog";
+import { recentBlogCount } from "@/common/constant";
 interface CategoryType {
   name: string;
   [key: string]: any;
@@ -44,6 +56,10 @@ const inactiveCounts = computed(() => {
   return blogStore.getCountByCategory.map(
     (item: CategoryType) => item.inactive
   );
+});
+
+const computedRecentBlogs = computed(() => {
+  return blogStore.blogs.slice(0, recentBlogCount);
 });
 
 onMounted(() => {
