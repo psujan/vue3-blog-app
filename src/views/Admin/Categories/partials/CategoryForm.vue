@@ -2,7 +2,7 @@
   <base-modal
     :title="`${row ? 'Edit' : 'Add'} Category`"
     @on-close="closeModal"
-    v-model:show="show"
+    :show="show"
     :width="600"
   >
     <Form @submit="onSubmit" ref="blogForm" :key="formRenderKey">
