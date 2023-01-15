@@ -37,7 +37,6 @@ export const useBlogStore = defineStore({
         categories[i].active = activeLength;
         categories[i].inactive = blogs.length - activeLength;
       }
-      console.log('here', categories);
       this.statusByCategory = categories;
     }
   },
