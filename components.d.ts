@@ -31,6 +31,7 @@ declare module '@vue/runtime-core' {
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     InputCkEditor: typeof import('./src/components/form/InputCkEditor.vue')['default']
+    InputQuillEditor: typeof import('./src/components/form/InputQuillEditor.vue')['default']
     InputRadio: typeof import('./src/components/form/InputRadio.vue')['default']
     InputSelect: typeof import('./src/components/form/InputSelect.vue')['default']
     InputSimpleText: typeof import('./src/components/form/InputSimpleText.vue')['default']
