@@ -1,6 +1,6 @@
 <template>
   <base-modal
-    v-model:show="show"
+    :show="show"
     :show-header="false"
     :show-close-icon="false"
     animation-name="zoom"
