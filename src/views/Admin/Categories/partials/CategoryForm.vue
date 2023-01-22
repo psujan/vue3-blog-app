@@ -12,7 +12,7 @@
           name="name"
           :rules="{ required: true }"
           fieldClass="col-12 mb-18"
-          v-model="form.name"
+          v-model.trim="form.name"
         />
       </base-row>
       <base-row>

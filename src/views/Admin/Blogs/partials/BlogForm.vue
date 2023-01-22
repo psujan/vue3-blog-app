@@ -193,12 +193,13 @@ const closeModal = async () => {
 };
 
 const setFormData = (data: BlogObject) => {
-  const { title, category, status, reading_time, content } = data;
+  const { title, category, status, reading_time, content, created_at } = data;
   form.title = title;
   form.category = category;
   form.status = status == 1 ? "active" : "inactive";
   form.reading_time = reading_time;
   form.content = content;
+  form.created_at = created_at;
 };
 
 watch(

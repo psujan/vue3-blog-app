@@ -1,13 +1,6 @@
 @use "sass:math";
 @import "./variables.scss";
 /* general hover effect*/
-.hover {
-  transition: background-color, color 0.3s ease;
-  &:hover {
-    background-color: $primary-color;
-    color: #fff;
-  }
-}
 /*colors*/
 .clr-main {
   color: $primary-color;

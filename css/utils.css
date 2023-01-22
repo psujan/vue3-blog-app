@@ -1,12 +1,4 @@
 /* general hover effect*/
-.hover {
-  transition: background-color, color 0.3s ease;
-}
-.hover:hover {
-  background-color: #09bdf0;
-  color: #fff;
-}
-
 /*colors*/
 .clr-main {
   color: #09bdf0;

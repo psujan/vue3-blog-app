@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     BasePage: typeof import('./src/components/layouts/BasePage.vue')['default']
     BaseRow: typeof import('./src/components/base/BaseRow.vue')['default']
     BaseTable: typeof import('./src/components/base/BaseTable.vue')['default']
+    CloseIcon: typeof import('./src/components/icons/CloseIcon.vue')['default']
     ConfirmDialog: typeof import('./src/components/ui/ConfirmDialog.vue')['default']
     ConfirmModal: typeof import('./src/components/ui/ConfirmModal.vue')['default']
     CrudActions: typeof import('./src/components/ui/CrudActions.vue')['default']

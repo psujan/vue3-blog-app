@@ -8,14 +8,24 @@
 </template>
 
 <script setup lang="ts">
-import BaseHeader from "@/components/layouts/BaseHeader.vue";
 import { onMounted } from "vue";
 import { useBlogStore } from "./store/blog";
+import useSpinner from "@/composables/useSpinner";
+/**
+ * composable
+ */
+const { isLoading } = useSpinner();
 const blogStore = useBlogStore();
-onMounted(async ()=>{
+/**
+ * lifecycle hook
+ */
+onMounted(async () => {
+  isLoading(true);
   await blogStore.getAllBlogs();
   await blogStore.getStatusByCategory();
-})
+  blogStore.setFilteredBlogs();
+  isLoading(false);
+});
 </script>
 
 <style lang="scss">

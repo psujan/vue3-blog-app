@@ -4,6 +4,7 @@ import { apiUrl } from "@/common/config";
 const apiPath = {
   index: "/posts",
   create: "/posts",
+  show: "/posts/:id",
   update: "/posts/:id",
   delete: "/posts/:id",
 };
@@ -24,6 +25,10 @@ const BlogService = {
       `${apiUrl}${apiPath.update.replace(":id", id)}`,
       payload
     );
+  },
+
+  async show(id: string) {
+    return await api.get(`${apiUrl}${apiPath.show.replace(":id", id)}`);
   },
 
   async delete(id: string) {

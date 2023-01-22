@@ -65,7 +65,6 @@ const computedValue = computed({
   },
   // setter
   set(newValue) {
-    console.log(newValue);
     return emit("update:modelValue", newValue);
   },
 });

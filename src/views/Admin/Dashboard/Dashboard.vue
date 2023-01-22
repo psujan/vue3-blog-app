@@ -34,6 +34,7 @@ import { computed, onMounted } from "vue";
 import DashboardCharts from "./partials/DashboardCharts.vue";
 import { useBlogStore } from "@/store/blog";
 import { recentBlogCount } from "@/common/constant";
+
 interface CategoryType {
   name: string;
   [key: string]: any;
@@ -64,5 +65,6 @@ const computedRecentBlogs = computed(() => {
 
 onMounted(() => {
   console.log("Dashboard Home Mounted Successfully");
+  
 });
 </script>

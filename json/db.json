@@ -1,29 +1,99 @@
 {
   "posts": [
     {
-      "title": "Eveniet aut assumen",
-      "category": "System & Engineering",
-      "status": 0,
-      "content": "<p>dami xa ta</p>",
-      "reading_time": 2,
-      "created_at": "",
-      "updated_at": 1673448893743,
-      "id": 10
+      "title": "Best Practices for Vue.js",
+      "category": "IT & Software",
+      "status": 1,
+      "content": "<p>Vue.js is an easy to use web app framework that we can use to develop interactive front end apps.In this article, we’ll look at how to write Vue apps in an easy maintainable way by following a few best practices.<strong>Use Data Property On Component</strong>The data property in a component should be a function rather than an object so that the component’s state isn’t shared with the outside.For instance, we should write:&lt;template&gt;&nbsp; &lt;div id=\"app\"&gt;{{name}}&lt;/div&gt;&lt;/template&gt;</p><p>&lt;script&gt;export default {&nbsp; name: \"App\",&nbsp; data() {&nbsp; &nbsp; return {&nbsp; &nbsp; &nbsp; name: \"Jane\"&nbsp; &nbsp; };&nbsp; }};&lt;/script&gt;So that name isn’t shared with other components.&nbsp;</p><p><strong>Use Kebab-Case</strong>Elements and components should be kebab-case. In addition, custom event names are automatically changed to kebab case.For instance, we can write the following code to nest components and emit new events:&lt;template&gt;&nbsp; &lt;div&gt;&nbsp; &nbsp; &lt;button @click=\"increment\"&gt;Increment&lt;/button&gt;&nbsp; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default {&nbsp; name: \"count-button\",&nbsp; methods: {&nbsp; &nbsp; increment() {&nbsp; &nbsp; &nbsp; this.$emit(\"increase-count\");&nbsp; &nbsp; }&nbsp; }};&lt;/script&gt;App.vue&lt;template&gt;&nbsp; &lt;div id=\"app\"&gt;&nbsp; &nbsp; {{count}}&nbsp; &nbsp; &lt;count-button @increase-count=\"count++\"&gt;&lt;/count-button&gt;&nbsp; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import CountButton from \"./components/CountButton.vue\";export default {&nbsp; name: \"App\",&nbsp; components: {&nbsp; &nbsp; CountButton&nbsp; },&nbsp; data() {&nbsp; &nbsp; return {&nbsp; &nbsp; &nbsp; count: 0&nbsp; &nbsp; };&nbsp; }};&lt;/script&gt;In the code above, we have:this.$emit(\"increase-count\");to emit an increase-count event, which is in kebab-case. We also have count-button which is kebab-case.<strong>Add key Prop to v-for Directive</strong>Items rendered with v-for needs a key prop with a unique key as a value so that it’s identifier properly by Vue. This is especially important if we need to manipulate the items after it’s rendered.The key prop value should be unique and not the index of the array whenever possible.<strong>Do Not Mix v-for and v-if</strong>v-for and v-if shouldn’t be used together. It takes a lot more computing power to check if every entry of an array or object should be displayed with v-if .&nbsp;</p><p>Instead, we should use computed properties to filter out items that shouldn’t be displayed as follows:In the code above, we have the todoTasks property to return a filtered array of tasks that have done set to false . This way, we don’t have to check them one by one with v-if as we render them with v-for .<strong>Conclusion</strong>To speed up our apps and make them cleaner, we should use computed properties for data derived from other data.&nbsp;</p><p>Also, we should use kebab-case for event names and components to be consistent.</p><p>There are a few things to be aware of when rendering arrays. We shouldn’t use v-for and v-if . Instead we should use computed properties. Also, to help Vue uniquely identify a rendered array item, we should pass a key prop with a unique value for each entry. That should be a unique ID usually.The data property should be a function in components instead of an object.</p>",
+      "reading_time": "4",
+      "created_at": 1674052801379,
+      "updated_at": 1674052801379,
+      "id": 1
     },
     {
-      "title": "Reading Blog Test",
+      "title": "What’s the difference between a website and a Star Destroyer? Greebles.",
+      "category": "Other",
+      "status": 1,
+      "content": "<p>Nice xa hai ahile</p><p><br></p><p>dami dami </p>",
+      "reading_time": "5",
+      "created_at": 1674052807185,
+      "updated_at": 1674052807185,
+      "id": 2
+    },
+    {
+      "title": "Aliquam ut dolorem n",
+      "category": "Other",
+      "status": 1,
+      "content": "<p><a href=\"https://google.com\">test</a></p>",
+      "reading_time": "1",
+      "created_at": 1674052848234,
+      "updated_at": 1674052848234,
+      "id": 3
+    },
+    {
+      "title": "Why Do All Websites Look the Same?",
+      "category": "Design",
+      "status": 1,
+      "content": "<p><strong>The internet suffers from a lack of imagination, so I asked my students to redesign it</strong></p><p><br></p><p><span style=\"color: rgb(41, 41, 41);\">Web design today seems to be driven by technical and ideological constraints rather than creativity and ideas. Every page consists of containers in containers in containers; sometimes text, sometimes images. Nothing is truly designed, it’s simply assumed.</span></p><p><br></p><p><span style=\"color: rgb(41, 41, 41);\">Ironically, today’s web technologies have enormous design capabilities. We have the capability to implement almost every conceivable idea and layout. We can create radical, surprising, and evocative websites. We can combine experimental typography with generative images and interactive experiences.</span></p><p><br></p><p><span style=\"color: rgb(41, 41, 41);\"><span class=\"ql-cursor\">﻿﻿﻿</span>And yet, even websites for designers are based on containers in containers in containers. The most popular portals for creatives on the web — Dribbble and Behance — are so fundamentally boring they’re basically interchangeable. (See lead image.)</span></p><p><br></p>",
+      "reading_time": "3",
+      "created_at": 1674052813618,
+      "updated_at": 1674052813618,
+      "id": 4
+    },
+    {
+      "title": "7 Cool Useful JavaScript Coding Techniques That You Should Use",
+      "category": "IT & Software",
+      "status": 1,
+      "content": "<p><strong>1. Use object instead of “switch”</strong></p><p><span style=\"color: rgb(41, 41, 41);\">We often use&nbsp;</span><code style=\"color: rgb(41, 41, 41); background-color: rgb(242, 242, 242);\">switch</code><span style=\"color: rgb(41, 41, 41);\">&nbsp;to handle different things, but have you ever thought of using an object to greatly simplify your code?</span><strong style=\"color: rgb(41, 41, 41);\">(It works in some simple scenarios)</strong></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// ❌\n\tconst n = 1\n\tlet result\n\tswitch (n) {\n\t  case 1:\n\t    result = 'res-1'\n\t    break\n\t  case 2:\n\t    result = 'res-2'\n\t    break\n\t  case 3:\n\t    result = 'res-3'\n\t    break  \n\t  // ...There are a lot more\n\t}\n</pre><p><br></p><p><br></p><p><span style=\"color: rgb(41, 41, 41);\">you only need to use an object to achieve your goal.</span></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// ✅\n\tconst n = 1\n\tconst nMap = {\n\t  1: 'res-1',\n\t  2: 'res-2',\n\t  3: 'res-3'\n\t}\n\tconst result = nMap[ n ]\n</pre><p><br></p><p>2. Use the “includes” method instead of multiple “if”</p><p><br></p><p><span style=\"color: rgb(41, 41, 41);\">Do you often write code like this? Multiple conditions can trigger a piece of logic. As your business grows, you may need to write more “||”, that’s terrible.</span></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// ❌\n\tconst n = 1\n\tif (n === 1 || n === 2 || n === 3 || n === 4 || n === 5) {\n\t  // ...\n\t}\n</pre><p><br></p><p><span style=\"color: rgb(41, 41, 41);\">Use&nbsp;</span><code style=\"color: rgb(41, 41, 41); background-color: rgb(242, 242, 242);\">includes</code><span style=\"color: rgb(41, 41, 41);\">&nbsp;to make your code extra maintainable.</span></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// ✅\n\tconst n = 1\n\tconst conditions = [ 1, 2, 3, 4, 5 ] // You just need to add new numbers here\n\tif (conditions.includes(n)) {\n\t  // ...\n\t}\n</pre>",
+      "reading_time": "4",
+      "created_at": 1674052821187,
+      "updated_at": 1674052821187,
+      "id": 5
+    },
+    {
+      "title": "Interviewer: Can “x !== x” Return True in JavaScript？",
       "category": "System & Engineering",
       "status": 1,
-      "content": "<p>some 5 min content is here</p>",
-      "reading_time": "5",
-      "created_at": 1673448967896,
-      "updated_at": 1673448967896,
-      "id": 11
+      "content": "<p><span style=\"color: rgb(41, 41, 41);\">Recently I was asked a few strange interview questions. They are different from the regular questions: these interview questions seem very easy, but they test your thorough understanding of JavaScript. How many can you answer correctly?</span></p>",
+      "reading_time": "2",
+      "created_at": 1674052827946,
+      "updated_at": 1674052827946,
+      "id": 6
+    },
+    {
+      "title": "IND vs NZ Live Score Updates: New Zealand lose Conway early after Gill powers India to 349",
+      "category": "Other",
+      "status": 1,
+      "content": "<p><span style=\"color: rgb(26, 26, 26);\">India vs New Zealand 1st ODI: Shubman Gill became the youngest double centurion in ODIs as his 149-ball 208 powered India to 349 for 8 against New Zealand in the series opener in Hyderabad. Stay with TOI for all the live cricket score updates, ball-by-ball commentary, scorecard and highlights of 1st ODI match between India and New Zealand</span></p>",
+      "reading_time": "1",
+      "created_at": 1674052833690,
+      "updated_at": 1674052833690,
+      "id": 7
+    },
+    {
+      "title": "Foreign experts team in Pokhara for plane crash investigation",
+      "category": "Hot Topics",
+      "status": 1,
+      "content": "<p>A team of foreign experts arrived in Kathmandu on Tuesday to support the investigation of Yeti Airlines Flight 691 that crashed on Sunday morning just before landing in the new airport, killing 71 people on board. One person is still unaccounted for.</p><p><br></p><p>There are a total of 11 foreign experts—four from the Bureau of Enquiry and Analysis for Civil Aviation Safety (BEA), an agency of the French government, responsible for investigating aviation accidents and incidents.</p><p><br></p><p>There are a total of 11 foreign experts—four from the Bureau of Enquiry and Analysis for Civil Aviation Safety (BEA), an agency of the French government, responsible for investigating aviation accidents and incidents.</p><p><br></p><p>Similarly, six are from the aircraft manufacturer ATR, a Franco-Italian joint venture headquartered in Blagnac, France, and one expert from the European Union Aviation Safety Agency ( EASA ), an agency of the European Union (EU) responsible for civil aviation safety.</p><p><br></p><p>They travelled to Pokhara on Tuesday evening and were accompanied by another 11-member Nepali team—five of whom were from the investigation commission formed by the Nepal government.</p><p><br></p><p>“The experts will support Nepal’s investigation team,” said Buddhi Sagar Lamichhane, joint secretary at the Civil Aviation Ministry.</p><p><br></p><p>According to him, the commission has received both the cockpit voice recorder (CVR) and the flight data recorder (FDR).</p><p><br></p><p>“We will examine the CVR in Kathmandu, while the FDR will be sent abroad as we don’t have the facility to examine the recording here,” according to Lamichhane. “We have not yet decided to which country we should send the FDR.”</p><p><br></p><p>“The foreign experts will make safety recommendations based on what is learned from those investigations,” said Lamichhane.</p><p><br></p><p>Experts in Kathmandu have said the accident was a terrible disaster because the plane plunged in clear weather for no apparent reason.</p><p><br></p><p>There are many questions unanswered.</p><p><br></p><p>Meanwhile, Nepali authorities handed over the bodies of those killed to their family members in Pokhara.</p><p><br></p><p>In Kathmandu, according to Sudarshan Bartaula, spokesperson of Yeti Airlines, 48 bodies were airlifted and taken to the Tribhuvan University Teaching Hospital for postmortem.</p><p><br></p><p>“As it will take time to complete the postmortem, the bodies will be provided to the family members on Wednesday.”</p><p><br></p><p>Assistant Chief District Officer of Kaski Anil Kumar Shahi said that the body of one more victim was found on Tuesday afternoon.</p><p><br></p><p>“The body of one of the two missing victims has been found. The body was found after the flow of the river was reduced,” said Shahi.</p><p><br></p><p>Rescuers have been struggling to recover the remaining one body due to the difficult terrain.</p><p><br></p><p>Officials said that rescuers also recovered some body parts and a skeleton at the crash site on Tuesday and they were sent for the deoxyribonucleic acid (DNA) testing, in Kathmandu.</p><p><br></p><p><br></p>",
+      "reading_time": "3",
+      "created_at": 1674052841307,
+      "updated_at": 1674052841307,
+      "id": 8
+    },
+    {
+      "title": "New Demo Blog",
+      "category": "Politics",
+      "status": 1,
+      "content": "<p>This is demo blog</p>",
+      "reading_time": "3",
+      "created_at": 1674290110192,
+      "updated_at": 1674290110192,
+      "id": 9
     }
   ],
   "categories": [
     {
-      "name": "IT & Software ",
+      "name": "IT & Software",
       "id": 1
     },
     {
@@ -37,6 +107,18 @@
     {
       "id": 4,
       "name": "Other"
+    },
+    {
+      "name": "Politics",
+      "id": 5
+    },
+    {
+      "name": "Hot Topics",
+      "id": 6
+    },
+    {
+      "name": "New & Test",
+      "id": 7
     }
   ]
 }

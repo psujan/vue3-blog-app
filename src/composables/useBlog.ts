@@ -64,11 +64,24 @@ export default function useBlog() {
     }
   };
 
+  const getBlogById = async(id: string)=>{
+    isLoading(true);
+    try {
+      return await BlogService.show(id);
+    } catch (error) {
+      console.error(error);
+      return null;
+    } finally {
+      isLoading(false);
+    }
+  }
+
   return {
     blogRows,
     createBlog,
     updateBlog,
     getBlogs,
     deleteBlog,
+    getBlogById
   };
 }

@@ -3,7 +3,7 @@
     <div class="container flx flx-x-btwn flx-y-ctr pt-10 pb-10">
       <BaseLogo />
       <div class="search">
-        <form action="">
+        <form @submit.prevent="handleSearch">
           <input-text
             field-class="search-input"
             input-class="form-input"
@@ -25,15 +25,27 @@
 <script lang="ts" setup>
 import BaseLogo from "../base/BaseLogo.vue";
 import { ref } from "vue";
+import { useBlogStore } from "@/store/blog";
+import { useRouter } from "vue-router";
+/**
+ * composables
+ */
+const blogStore = useBlogStore();
+const router = useRouter();
 /**
  *
- * data
+ * reactive data
  */
 const search = ref("");
 //methods
-function redirectToGithub(e: Event): void {
-  console.log("redirecting ...", e);
-}
+const handleSearch = () => {
+  if (search.value) {
+    router.push(`/?search=${search.value}`);
+  } else {
+    router.push(`/`);
+  }
+  // blogStore.setSearchQuery(search.value);
+};
 </script>
 
 <style lang="scss" src="@/assets/saas/views/header.scss"></style>

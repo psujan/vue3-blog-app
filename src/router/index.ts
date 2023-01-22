@@ -10,6 +10,11 @@ const routes = [
     name: "Home",
     component: () => import("@/views/Home/HomePage.vue"),
   },
+  {
+    path: "/blog/:id",
+    name: "BlogContent",
+    component: () => import("@/views/Front/BlogContent.vue"),
+  },
   ...dashboardRoutes
 ];
 
