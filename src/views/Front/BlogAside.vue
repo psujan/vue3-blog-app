@@ -1,7 +1,7 @@
 <template>
   <div class="b-wrap">
     <div class="b-single bdr-bottom pt-30 pb-30">
-      <h2 class="f-h2 w-70 mb-15">Reading Topics</h2>
+      <h2 class="f-h2 mb-15">Reading Topics</h2>
       <ul class="flx reading-category" v-if="computedReadingList.length">
         <li
           class="pl-4 pr-4 mb-10"
@@ -67,6 +67,12 @@ const modifiedCategoryName = (name: string) => {
   &:hover{
     background-color: $primary-color;
     color:#fff;
+  }
+}
+
+@media screen and (max-width : $small){
+  .b-wrap{
+    display: none;
   }
 }
 </style>

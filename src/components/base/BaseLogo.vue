@@ -1,14 +1,14 @@
 <template>
   <div>
-    <a href="javascript:;">
+    <router-link to="/">
       <div class="logo">
-        <span class="logo-text" :style="{color:color}">
+        <span class="logo-text" :style="{ color: color }">
           <div class="logo-circle"></div>
           <div class="logo-circle"></div>
           <span>Blog App</span>
         </span>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ interface Props {
 
 // Props
 const props = withDefaults(defineProps<Props>(), {
-  color:"#100b0b"
+  color: "#100b0b",
 });
 </script>
 
@@ -44,5 +44,4 @@ const props = withDefaults(defineProps<Props>(), {
   transform: translateX(-6px) translateY(-12px);
   margin-right: 6px;
 }
-
 </style>

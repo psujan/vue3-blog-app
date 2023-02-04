@@ -2,8 +2,8 @@
   <div class="b-wrap">
     <template v-if="rows && rows.length">
       <router-link :to="`/blog/${row.id}`" v-for="(row, i) in rows" :key="i">
-        <div class="b-single bdr-bottom pt-30 pb-30">
-          <h2 class="f-h2 w-70 mb-15">
+        <div class="b-single bdr-bottom">
+          <h2 class="f-h2  mb-15">
             {{ row.title }}
           </h2>
           <p
@@ -44,6 +44,7 @@ const props = defineProps<Props>();
 @import "../../assets/saas/variables.scss";
 
 .b-single {
+  padding:1.2rem 0;
   h2 {
     cursor: pointer;
     line-height: 1.55;

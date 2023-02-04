@@ -25,11 +25,53 @@
   input {
     border-radius: 30px;
     border: 1px solid $gray-white-color;
-    ;
     &:focus {
       border: 1px solid transparent;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       background: #fff;
+    }
+  }
+}
+.h-icon-bars {
+  display: none;
+}
+
+.h-mobile-menu {
+  height: 100vh;
+  width: 0%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  background: $white;
+}
+
+.h-mobile-menu.active {
+  width: 100%;
+}
+
+.h-reading-category{
+  column-count: 2;
+}
+
+@media screen and (max-width: $small) {
+  #h-github-link,
+  #h-search {
+    display: none;
+  }
+
+  .logo-text {
+    margin-top: 10px;
+  }
+
+  .h-icon-bars {
+    display: block;
+  }
+
+  .icon-lg {
+    .la {
+      font-size: $font-xl;
+      font-size: 600;
     }
   }
 }

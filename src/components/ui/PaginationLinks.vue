@@ -94,7 +94,7 @@ const computedStartPage = computed(() => {
   }
 
   if (props.currentPage === props.totalPages) {
-    if(props.totalPages > props.totalVisibleLinks){
+    if (props.totalPages > props.totalVisibleLinks) {
       return props.totalPages - props.totalVisibleLinks + 1;
     }
     return 1;
@@ -168,14 +168,14 @@ const isPageActive = (pageNumber: number) => {
     height: 34px;
     text-align: center;
     color: $black-color;
-    background-color:#fff;
+    background-color: #fff;
     padding: 4px;
     font-size: 12px;
     font-family: inherit;
     outline: none;
     border: none;
     border-radius: 3px;
-    cursor:pointer;
+    cursor: pointer;
     &:disabled {
       cursor: not-allowed;
       background-color: rgba(239, 239, 239, 0.3);
@@ -186,5 +186,15 @@ const isPageActive = (pageNumber: number) => {
 .pageActive {
   background-color: $primary-color !important;
   color: #fff !important;
+}
+
+@media screen and (max-width: $small) {
+  .pagination-item {
+    button {
+      width:28px;
+      height:28px;
+      padding:2px;
+    }
+  }
 }
 </style>

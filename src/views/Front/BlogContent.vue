@@ -11,9 +11,6 @@
               class="mb-30 mt-10 f-auto content"
               v-html="row.content"
             ></p>
-            <div class="b-info pt-5 pb-5">
-              <a href="javascript:;" class="page-btn-tag">{{ row.category }}</a>
-            </div>
           </div>
         </div>
       </div>

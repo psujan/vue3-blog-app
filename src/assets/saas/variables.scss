@@ -1,29 +1,70 @@
+:root {
+  --clr-primary-color: #09bdf0;
+  --clr-primary-color-light: #dee7f2;
+  --clr-black-color: #100b0b;
+  --clr-gray-color-medium: #877a7a;
+  --clr-gray-white-color: #efefef;
+  --clr-gray-white-color-80: #efefefcc;
+  --clr-gray-color-light: #cccccc66;
+  --clr-white: #fff;
+  --clr-white-light-color: #fafafa;
+  --clr-black-color-alt: #0f1212cc;
+  --clr-primary-hover-color: #15a8d1;
+
+  //font-sizes
+  --font-size-tiny: 0.75rem;
+  --font-size-small: 0.875rem;
+  --font-size-auto: 1rem;
+  --font-size-body: 0.9375rem;
+  --font-size-h2: 1.125rem;
+  --font-size-h1: 1.375rem;
+  --font-lg: 1.5rem;
+  --font-xl: 1.75rem;
+  --font-xxxl: 2.25rem;
+}
+
 // Color Schemes
-$primary-color: #09bdf0;
-$primary-color-light:#dee7f2;
-$black-color: #100b0b;
-$gray-color-medium: #877a7a;
-$gray-white-color: #efefef;
-$gray-white-color-80:#efefefcc;
-$gray-color-light: #cccccc66;
-$white: #fff;
-$white-light-color:#fafafa;
-$black-color-alt:#0f1212cc;
-$primary-hover-color:#15a8d1;
+$primary-color: var(--clr-primary-color);
+$primary-color-light: var(--clr-primary-color-light);
+$black-color: var(--clr-black-color);
+$gray-color-medium: var(--clr-gray-color-medium);
+$gray-white-color: var(--clr-gray-white-color);
+$gray-white-color-80: var(--clr-gray-white-color-80);
+$gray-color-light: var(--clr-gray-color-light);
+$white: var(--clr-white);
+$white-light-color: var(--clr-white-light-color);
+$black-color-alt: var(--clr-black-color-alt);
+$primary-hover-color: var(--clr-primary-hover-color);
 
 // Font Sizing
-$font-size-tiny: 12px;
-$font-size-small: 14px;
-$font-size-auto: 16px;
-$font-size-body: 15px;
-$font-size-heading-2: 18px;
-$font-size-heading-1: 22px;
-$font-lare-50:24px;
-$font-large-80:28px;
-$font-large-100:36px;
+$font-size-tiny: var(--font-size-tiny);
+$font-size-small: var(--font-size-small);
+$font-size-auto: var(--font-size-auto);
+$font-size-body: var(--font-size-body);
+$font-size-h2: var(--font-size-h2);
+$font-size-h1: var(--font-size-h1);
+$font-lg: var(--font-lg);
+$font-xl: var(--font-xl);
+$font-xxxl: var(--font-xxxl);
 
 // Device Size
 $small: 500px;
 $medium: 900px;
 $large: 1200px;
 $extra-large: 1400px;
+
+@media screen and (max-width: $small) {
+  // Font Sizing
+  :root {
+    //font-sizes
+    --font-size-tiny: 0.75rem;
+    --font-size-small: 0.875rem;
+    --font-size-auto: 0.9375rem;
+    --font-size-body: 0.9rem;
+    --font-size-h2: 1.0rem;
+    --font-size-h1: 1.2rem;
+    --font-lg: 1.3rem;
+    --font-xl: 1.5rem;
+    --font-xxxl: 1.8rem;
+  }
+}
