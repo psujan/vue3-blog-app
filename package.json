@@ -10,9 +10,6 @@
     "api": "json-server -w json/db.json --port=3001 --delay=500"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^35.4.0",
-    "@ckeditor/ckeditor5-code-block": "^35.4.0",
-    "@ckeditor/ckeditor5-vue": "^4.0.1",
     "@vee-validate/i18n": "^4.7.1",
     "@vee-validate/rules": "^4.7.1",
     "@vueup/vue-quill": "^1.0.1",
