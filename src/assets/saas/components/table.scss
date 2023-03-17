@@ -2,6 +2,7 @@
 
 .base-table{
   font-size: 14px;
+  padding:1.2rem;
   width: 100%;
   table{
     width: 100%;
@@ -12,17 +13,22 @@
     th{
       text-align: left;
       padding:14px 8px;
+      border:1px solid $gray-white-color;
+    }
+    tr{
     }
   }
 
   tbody{
     td{
       padding:10px 8px;
+      border:1px solid $gray-white-color;
     }
-    // tr{
-    //   &:hover{
-    //     background:$gray-white-color;
-    //   }
-    // }
+    tr{
+      border:1px solid $gray-white-color;
+      &:hover{
+        background:$gray-white-color;
+      }
+    }
   }
 }
